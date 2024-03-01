@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+}
+
+
+#container {
+    position: relative;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+}
+
+
+#container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+#time, #buttons {
+    position: relative;
+    z-index: 2;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* This will add a 10px gap between the buttons */
+}
+#buttons .button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#buttons .button:active {
+    background-color: rgba(62, 142, 65, 0.8);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.youtube {
+    background-color: #FF0000; /* Red for YouTube */
+}
+
+.twitch {
+    background-color: #6441A4; /* Purple for Twitch */
+}
+
+.youtube:hover {
+    background-color: #CC0000; /* Darker red on hover */
+}
+
+.twitch:hover {
+    background-color: #4B367C; /* Darker purple on hover */
+}
+.gdocs {
+    background-color: #4285F4; /* Blue for Google Docs */
+}
+
+.tuta {
+    background-color: #a52440; /* Dark grey for Tutanota */
+}
+
+.github {
+    background-color: #03111f; /* Dark grey for GitHub */
+}
+
+.gdocs:hover {
+    background-color: #357ae8; /* Darker blue on hover */
+}
+
+.tuta:hover {
+    background-color: #7a1a2f; /* Darker grey on hover */
+}
+
+.github:hover {
+    background-color: #000000; /* Darker grey on hover */
+}
