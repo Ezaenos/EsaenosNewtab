@@ -26,23 +26,21 @@ function fetchImage() {
     }
 
     // Fetch a new image
-    fetch('https://api.unsplash.com/search/photos?query=nature&orientation=landscape&client_id=xvrrFa6IsI6YDDi_hO3JzviSOPJesUkbR5zYq839UKc')
-    .then(response => response.json())
-    .then(data => {
-        if (data && data.results && data.results.length > 0) {
-            // Select a random image from the results
-            const randomIndex = Math.floor(Math.random() * data.results.length);
-            const imageUrl = data.results[randomIndex].urls.full;
-            $.backstretch(imageUrl);
-            localStorage.setItem('backgroundImage', JSON.stringify({ url: imageUrl, timestamp: now }));
+    fetch('https://api.unsplash.com/photos/random?query=HD nature&orientation=landscape&client_id=xvrrFa6IsI6YDDi_hO3JzviSOPJesUkbR5zYq839UKc')
+        .then(response => response.json())
+        .then(data => {
+            if (data && data.urls && data.urls.full) {
+                const imageUrl = data.urls.full;
+                $.backstretch(imageUrl);
+                localStorage.setItem('backgroundImage', JSON.stringify({ url: imageUrl, timestamp: now }));
 
-            // Update the word
-            updateWord();
-        } else {
-            // Show default image or error message
-        }
-    })
-    .catch(error => console.error('Error:', error));
+                // Update the word
+                updateWord();
+            } else {
+                // Show default image or error message
+            }
+        })
+        .catch(error => console.error('Error:', error));
 }
 
 // Call fetchImage initially
@@ -55,38 +53,10 @@ setInterval(fetchImage, 2 * 60 * 1000);
 const words = [
     { word: '你好', pinyin: 'nǐ hǎo', translation: 'Bonjour' },
     { word: '谢谢', pinyin: 'xièxie', translation: 'Merci' },
-    { word: '对不起', pinyin: 'duìbùqǐ', translation: 'Désolé'},
     { word: '再见', pinyin: 'zàijiàn', translation: 'Au revoir'},
     { word: '早上好', pinyin: 'zǎoshànghǎo', translation: 'Bon matin' },
     { word: '晚上好', pinyin: 'wǎnshànghǎo', translation: 'Bonsoir' },
-    { word: '晚安', pinyin: 'wǎnān', translation: 'Bonne nuit'},
-    { word: '我爱你', pinyin: 'wǒ ài nǐ', translation: "je t'aime"},
-    { word: '我想念你', pinyin: 'wǒ xiǎngniàn nǐ', translation: 'Tu me manques'},
-    { word: '我很好', pinyin: 'wǒ hěn hǎo', translation: 'Je vais bien'},
-    { word: '我很累', pinyin: 'wǒ hěn lèi', translation: 'je suis fatigué'},
-    { word: '我很饿', pinyin: 'wǒ hěn è', translation: "j'ai faim"},
-    { word: '我很渴', pinyin: 'wǒ hěn kě', translation: "j'ai soif"},
-    { word: '我很冷', pinyin: 'wǒ hěn lěng', translation: "j'ai froid"},
-    { word: '我很热', pinyin: 'wǒ hěn rè', translation: "j'ai chaud"},
-    { word: '我很快乐', pinyin: 'wǒ hěn kuàilè', translation: "je suis heureux"},
-    { word: '我很悲伤', pinyin: 'wǒ hěn bēishāng', translation: "je suis triste"},
-    { word: '我很生气', pinyin: 'wǒ hěn shēngqì', translation: "je suis en colère"},
-    { word: '我很紧张', pinyin: 'wǒ hěn jǐnzhāng', translation: "je suis nerveux"},
-    { word: '我很害怕', pinyin: 'wǒ hěn hàipà', translation: "j'ai peur"},
-    { word: '我很疼', pinyin: 'wǒ hěn téng', translation: "j'ai mal"},
-    { word: '我很无聊', pinyin: 'wǒ hěn wúliáo', translation: "je m'ennuie"},
-    { word: '我很烦', pinyin: 'wǒ hěn fán', translation: "je suis ennuyé"},
-    { word: '我很开心', pinyin: 'wǒ hěn kāixīn', translation: "je suis content"},
-    { word: '我很兴奋', pinyin: 'wǒ hěn xīngfèn', translation: "je suis excité"},
-    { word: '我很惊讶', pinyin: 'wǒ hěn jīngyà', translation: "je suis surpris"},
-    { word: '我很害羞', pinyin: 'wǒ hěn hàixiū', translation: "je suis timide"},
-    { word: '你好', pinyin: 'nǐ hǎo', translation: 'Bonjour' },
-    { word: '谢谢', pinyin: 'xièxie', translation: 'Merci' },
-    { word: '对不起', pinyin: 'duìbùqǐ', translation: 'Désolé'},
-    { word: '再见', pinyin: 'zàijiàn', translation: 'Au revoir'},
-    { word: '早上好', pinyin: 'zǎoshànghǎo', translation: 'Bon matin' },
-    { word: '晚上好', pinyin: 'wǎnshànghǎo', translation: 'Bonsoir' },
-    { word: '晚安', pinyin: 'wǎnān', translation: 'Bonne nuit'},
+    { word: '晚安', pinyin: 'wǎn ān', translation: 'Bonne nuit'},
     { word: '我爱你', pinyin: 'wǒ ài nǐ', translation: "je t'aime"},
     { word: '我想念你', pinyin: 'wǒ xiǎngniàn nǐ', translation: 'Tu me manques'},
     { word: '我很好', pinyin: 'wǒ hěn hǎo', translation: 'Je vais bien'},
