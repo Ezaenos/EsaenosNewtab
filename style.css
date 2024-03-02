@@ -36,6 +36,11 @@ html, body {
     position: relative;
     z-index: 2;
 }
+#time {
+    position: relative;
+    z-index: 3;
+    border-bottom: white 2px solid;
+}
 
 #buttons {
     display: flex;
@@ -53,6 +58,11 @@ html, body {
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+.button {
+    opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family: 'Roboto', sans-serif;
 }
 
 #buttons .button:active {
@@ -89,7 +99,7 @@ html, body {
 }
 
 .gdocs:hover {
-    background-color: #357ae8; /* Darker blue on hover */
+    background-color: #285eb4; /* Darker blue on hover */
 }
 
 .tuta:hover {
@@ -98,4 +108,30 @@ html, body {
 
 .github:hover {
     background-color: #000000; /* Darker grey on hover */
+}
+
+#word-container {
+    text-align: center;
+    padding: 20px;
+}
+#word, #pinyin, #translation, #buttons {
+    position: relative;
+    z-index: 3;
+}
+
+#word {
+    font-size: 4em;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+#pinyin, #translation {
+    font-size: 2em;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+#translation {
+    position: relative;
 }
