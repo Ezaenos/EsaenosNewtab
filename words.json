@@ -1,5 +1,5 @@
 [
-        {"word": "你好", "pinyin": "nǐ hǎo", "translation": "Bonjour" },
+        { "word": "你好", "pinyin": "nǐ hǎo", "translation": "Bonjour" },
         { "word": "谢谢", "pinyin": "xièxie", "translation": "Merci" },
         { "word": "再见", "pinyin": "zàijiàn", "translation": "Au revoir" },
         { "word": "早上好", "pinyin": "zǎoshànghǎo", "translation": "Bon matin" },
