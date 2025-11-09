@@ -12,27 +12,27 @@ updateTime();
 // And every 30 seconds
 setInterval(updateTime, 30000);
 
-function fetchImage() {
-    const storedData = localStorage.getItem('backgroundImage');
-    const now = new Date().getTime();
+//function fetchImage() {
+   // const storedData = localStorage.getItem('backgroundImage');
+   // const now = new Date().getTime();
 
-    if (storedData) {
-        const { url, timestamp } = JSON.parse(storedData);
+   // if (storedData) {
+     //   const { url, timestamp } = JSON.parse(storedData);
         // If the stored image is less than 5 minutes old, use it
-        if (now - timestamp < 2 * 60 * 1000) {
-            $.backstretch(url);
-            return;
+     //   if (now - timestamp < 2 * 60 * 1000) {
+      //      $.backstretch(url);
+       //     return;
         }
     }
 
     // Fetch a new image
-    fetch('https://api.unsplash.com/photos/random?query=taiwan landscape&orientation=landscape&client_id=xvrrFa6IsI6YDDi_hO3JzviSOPJesUkbR5zYq839UKc')
-        .then(response => response.json())
-        .then(data => {
-            if (data && data.urls && data.urls.full) {
-                const imageUrl = data.urls.full;
-                $.backstretch(imageUrl);
-                localStorage.setItem('backgroundImage', JSON.stringify({ url: imageUrl, timestamp: now }));
+   // fetch('https://api.unsplash.com/photos/random?query=taiwan landscape&orientation=landscape&client_id=xvrrFa6IsI6YDDi_hO3JzviSOPJesUkbR5zYq839UKc')
+      //  .then(response => response.json())
+      //  .then(data => {
+         //   if (data && data.urls && data.urls.full) {
+            //    const imageUrl = data.urls.full;
+             //   $.backstretch(imageUrl);
+             //   localStorage.setItem('backgroundImage', JSON.stringify({ url: imageUrl, timestamp: now }));
 
                 // Update the word
                 updateWord();
@@ -44,9 +44,9 @@ function fetchImage() {
 }
 
 // Call fetchImage initially
-fetchImage();
+//fetchImage();
 // And every 5 minutes
-setInterval(fetchImage, 2 * 60 * 1000);
+//setInterval(fetchImage, 2 * 60 * 1000);
 let words = [];
 
 fetch('words.json')
@@ -107,4 +107,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('nextWord').addEventListener('click', function() {
         updateWord(true);
     });
+
 });
