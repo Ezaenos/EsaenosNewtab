@@ -22,8 +22,8 @@ setInterval(updateTime, 30000);
      //   if (now - timestamp < 2 * 60 * 1000) {
       //      $.backstretch(url);
        //     return;
-        }
-    }
+       // }
+   // }
 
     // Fetch a new image
    // fetch('https://api.unsplash.com/photos/random?query=taiwan landscape&orientation=landscape&client_id=xvrrFa6IsI6YDDi_hO3JzviSOPJesUkbR5zYq839UKc')
@@ -35,13 +35,13 @@ setInterval(updateTime, 30000);
              //   localStorage.setItem('backgroundImage', JSON.stringify({ url: imageUrl, timestamp: now }));
 
                 // Update the word
-                updateWord();
-            } else {
+             //   updateWord();
+          //  } else {
                 // Show default image or error message
-            }
-        })
-        .catch(error => console.error('Error:', error));
-}
+          //  }
+     //   })
+   //     .catch(error => console.error('Error:', error));
+//}
 
 // Call fetchImage initially
 //fetchImage();
@@ -109,3 +109,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
 });
+
