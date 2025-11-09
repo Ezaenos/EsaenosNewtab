@@ -7,9 +7,8 @@
 html, body {
     height: 100%;
     overflow: hidden;
-    background-size: cover;
+    background: transparent !important;
 }
-
 
 #container {
     position: relative;
@@ -28,7 +27,7 @@ html, body {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: transparent;
     z-index: 1;
     pointer-events: none;  /* Add this line */
 }
@@ -177,3 +176,4 @@ html, body {
 #toggleBlur:hover {
     background-color: #45a049; /* Darker green on hover */
 }
+
